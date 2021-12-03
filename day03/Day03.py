@@ -16,7 +16,7 @@ if argv[1] == "1":
 
     print(gamma * epsilon)
 else:
-
+    # Part two
     def go(init, post):
         for i in range(cols):
             if len(init) > 1:
