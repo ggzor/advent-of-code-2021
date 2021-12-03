@@ -1,0 +1,6 @@
+[submodule "cp-utils"]
+	path = cp-utils
+	url = https://github.com/ggzor/cp-utils
+[submodule "aoc-utils"]
+	path = aoc-utils
+	url = https://github.com/ggzor/aoc-utils
