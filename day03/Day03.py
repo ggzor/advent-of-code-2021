@@ -1,55 +1,31 @@
 from sys import argv, stdin
-from collections import defaultdict
-import itertools as it
-import operator as op
+from collections import Counter
 
 ns = [[int(c) for c in s.strip()] for s in stdin.readlines()]
 cols = len(ns[0])
 
-
-def most_common_count(nums):
-    common = [(0, 0)] * cols
-
-    for i, col in enumerate(map(lambda c: it.groupby(sorted(map(int, c))), zip(*nums))):
-        for k, g in col:
-            gcount = len(list(g))
-
-            _, ccount = common[i]
-
-            if gcount > ccount:
-                common[i] = k, gcount
-            elif gcount == ccount:
-                common[i] = k, gcount
-
-    return [x[0] for x in common]
-
-
+bit_counts = lambda nums: [Counter(col) for col in zip(*nums)]
+most_common = lambda bitc: [1 if col[1] >= col[0] else 0 for col in bitc]
+least_common = lambda mostc: [1 - x for x in mostc]
 as_dec = lambda l: int("".join(map(str, l)), 2)
 
 if argv[1] == "1":
-    gamma = most_common_count(ns)
-    epsilon = [1 - x for x in gamma]
+    t = most_common(bit_counts(ns))
+    gamma = as_dec(t)
+    epsilon = as_dec(least_common(t))
 
-    print(as_dec(gamma) * as_dec(epsilon))
+    print(gamma * epsilon)
 else:
-    oxygen = 0
-    scrubber = 0
 
-    rest_most = ns
-    rest_least = ns
+    def go(init, post):
+        for i in range(cols):
+            if len(init) > 1:
+                t = post(most_common(bit_counts(init)))
+                init = list(filter(lambda x: x[i] == t[i], init))
 
-    for i in range(cols):
-        if len(rest_most) > 1:
-            most_most_common = most_common_count(rest_most)
-            rest_most = list(filter(lambda x: x[i] == most_most_common[i], rest_most))
+        return init[0]
 
-        if len(rest_least) > 1:
-            least_most_common = [1 - x for x in most_common_count(rest_least)]
-            rest_least = list(
-                filter(lambda x: x[i] == least_most_common[i], rest_least)
-            )
+    oxygen = as_dec(go(ns, lambda x: x))
+    co2 = as_dec(go(ns, least_common))
 
-    oxygen = as_dec(rest_most[0])
-    scrubber = as_dec(rest_least[0])
-
-    print(oxygen * scrubber)
+    print(oxygen * co2)
