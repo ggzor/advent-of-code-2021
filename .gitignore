@@ -1,6 +1,9 @@
 # Please no
 .envrc
 
+# Build caches
+.cp_cache
+
 ### Scala
 *.class
 *.log
