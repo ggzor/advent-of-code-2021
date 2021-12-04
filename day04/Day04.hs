@@ -1,93 +1,82 @@
 {-# LANGUAGE TupleSections #-}
 {-# LANGUAGE TypeApplications #-}
 
-import Data.Bifunctor
+import Data.Bifunctor (second)
 import Data.Char as C
-import Data.Function (on)
+import Data.Function
 import qualified Data.List as L
 import qualified Data.Map.Strict as M
-import Data.Maybe (fromMaybe)
-import Data.Ord (comparing)
+import Data.Maybe
+import Data.Ord
 
 import System.Environment
 
-type Mat = [[Int]]
-type Movements = [Int]
+type Row = Int
+type Col = Int
 
-data Board
-  = Incomplete
-      { marked :: M.Map (Int, Int) (Int, Bool)
-      , revIdx :: M.Map Int (Int, Int)
-      }
-  | Complete {score :: Int}
+data Board = Board
+  { marked :: M.Map (Row, Col) (Int, Bool)
+  , revIdx :: M.Map Int (Row, Col)
+  }
   deriving (Show)
 
-isCompleted (Complete _) = True
-isCompleted _ = False
-
-parseBoard mat =
-  let (marked, revIdx) =
+parseBoard board =
+  let (m, idx) =
         unzip
           [ (((i, j), (value, False)), (value, (i, j)))
-          | (row, i) <- zip mat [0 ..]
+          | (row, i) <- zip board [0 ..]
           , (value, j) <- zip row [0 ..]
           ]
-   in Incomplete (M.fromList marked) (M.fromList revIdx)
+   in Board (M.fromList m) (M.fromList idx)
 
-nextStep :: Int -> Board -> Board
-nextStep _ b@(Complete _) = b
-nextStep m (Incomplete marked revIdx) =
-  let newMarked = flip (M.adjust (second (const True))) marked <$> M.lookup m revIdx
-      new = Incomplete (fromMaybe marked newMarked) revIdx
-   in if isWinning new then Complete (scoreBoard new) else new
+nextNumber :: Int -> Board -> Board
+nextNumber n (Board m idx) = Board (fromMaybe m rep) idx
+ where
+  rep = (\idx -> M.adjust (second (const True)) idx m) <$> M.lookup n idx
 
-scoreBoard :: Board -> Int
-scoreBoard b@(Complete score) = score
-scoreBoard (Incomplete marked _) =
-  sum
-    . fmap (fst . snd)
-    . filter (not . snd . snd)
-    $ M.toList marked
+scoreBoard (Board m _) =
+  sum . fmap fst . filter (not . snd) $ M.elems m
+
+getAxis (Board m _) axis =
+  fmap (fmap snd)
+    . L.groupBy ((==) `on` axis . fst)
+    . L.sortOn (axis . fst)
+    $ M.toAscList m
 
 isWinning :: Board -> Bool
-isWinning (Complete _) = True
-isWinning (Incomplete marked _) =
-  let rows = L.groupBy ((==) `on` fst . fst) . L.sortOn (fst . fst) $ M.toAscList marked
-      cols = L.groupBy ((==) `on` snd . fst) . L.sortOn (snd . fst) $ M.toAscList marked
-      result = or . fmap (and . fmap (snd . snd)) $ (rows ++ cols)
-   in result
+isWinning board = or (fmap (and . fmap snd) . getAxis board =<< [fst, snd])
 
-firstWinning :: [Board] -> Movements -> (Board, Int)
-firstWinning boards (m : ms) =
-  let next = fmap (nextStep m) boards
-      winner = L.find isCompleted next
-   in maybe (firstWinning next ms) (,m) winner
+firstWinner :: [Board] -> [Int] -> (Board, Int)
+firstWinner boards (n : ns) =
+  let next = fmap (nextNumber n) boards
+      winner = L.find isWinning next
+   in maybe (firstWinner next ns) (,n) winner
 
-solve1 :: [Board] -> Movements -> Int
-solve1 boards movements = score * movement
+solve1 :: [Board] -> [Int] -> Int
+solve1 boards movements = scoreBoard w * n
  where
-  (Complete score, movement) = firstWinning boards movements
+  (w, n) = firstWinner boards movements
 
 {- Part 2 -}
 
-lastWinning :: [Board] -> Movements -> (Board, Int)
-lastWinning boards (m : ms) =
-  let next = fmap (nextStep m) boards
-      allCompleted = all isCompleted next
-   in if all isCompleted next
+lastWinner :: [Board] -> [Int] -> (Board, Int)
+lastWinner boards (m : ms) =
+  let next = fmap (nextNumber m) boards
+      allCompleted = all isWinning next
+   in if all isWinning next
         then
           (,m) . snd . head
             . filter
               ( \(bold, bnew) ->
-                  not (isCompleted bold) && isCompleted bnew
+                  not (isWinning bold) && isWinning bnew
               )
             $ zip boards next
-        else lastWinning next ms
+        else lastWinner next ms
 
-solve2 :: [Board] -> Movements -> Int
-solve2 boards movements = score * movement
+solve2 :: [Board] -> [Int] -> Int
+solve2 boards movements = scoreBoard w * n
  where
-  (Complete score, movement) = lastWinning boards movements
+  (w, n) = lastWinner boards movements
 
 solutions =
   [ solve1
