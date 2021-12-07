@@ -8,7 +8,7 @@ written in [Scala 3](https://scala-lang.org/),
            [Python](https://www.python.org/)
          and [Rust](https://www.rust-lang.org/).
 
-|Day|Title|1|2|3|4|
+|Day|Title|L1|L2|L3|L4|
 |---|---|---|---|---|---|
 |[01](https://adventofcode.com/2021/day/1)|Sonar Sweep|[Scala](./day01/Day01.scala)|[Haskell](./day01/Day01.hs#L5-L9)|[Python](./day01/Day01.py)|[Rust](./day01/Day01.rs)|
 |[02](https://adventofcode.com/2021/day/2)|Dive!|[Scala](./day02/Day02.scala)|[Haskell](./day02/Day02.hs#L7-L35)|[Python](./day02/Day02.py)|[Rust](./day02/Day02.rs)|
