@@ -11,6 +11,7 @@ PROBLEM_NAMES = [
     "Giant Squid",
     "Hydrotermal Venture",
     "Lanternfish",
+    "The Treachery of Whales",
 ]
 
 FILE_EXT_LANG = {

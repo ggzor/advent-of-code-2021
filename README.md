@@ -16,6 +16,7 @@ written in [Scala 3](https://scala-lang.org/),
 |[04](https://adventofcode.com/2021/day/4)|Giant Squid|[Scala](./day04/Day04.scala)|[Haskell](./day04/Day04.hs#L14-L79)|[Python](./day04/Day04.py)|[Rust](./day04/Day04.rs)|
 |[05](https://adventofcode.com/2021/day/5)|Hydrotermal Venture|[Scala](./day05/Day05.scala)|[Haskell](./day05/Day05.hs#L11-L30)|[Python](./day05/Day05.py)|[Rust](./day05/Day05.rs)|
 |[06](https://adventofcode.com/2021/day/6)|Lanternfish|[Scala](./day06/Day06.scala)|[Haskell](./day06/Day06.hs#L13-L29)|[Python](./day06/Day06.py)|[Rust](./day06/Day06.rs)|
+|[07](https://adventofcode.com/2021/day/7)|The Treachery of Whales|[Scala](./day07/Day07.scala)|[Haskell](./day07/Day07.hs#L10-L17)|[Python](./day07/Day07.py)|[Rust](./day07/Day07.rs)|
 
 ## Remarks
 
