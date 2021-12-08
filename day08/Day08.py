@@ -1,5 +1,6 @@
 from functools import reduce
 from sys import argv, stdin
+import operator as op
 from collections import defaultdict
 
 parts = [[[*map(frozenset, p.strip().split(" "))] for p in l.split("|")] for l in stdin]
@@ -13,40 +14,33 @@ else:
     total = 0
 
     for p1, p2 in parts:
-        known_digits = {}
-        unknown_digits_by_len = defaultdict(list)
+        known = {}
+        unknown_by_len = defaultdict(list)
 
         for s in p1:
             if len(s) in digit_lens.keys():
-                known_digits[digit_lens[len(s)]] = s
+                known[digit_lens[len(s)]] = s
             else:
-                unknown_digits_by_len[len(s)].append(s)
+                unknown_by_len[len(s)].append(s)
 
-        first = lambda s: next(iter(s))
+        digits_of_len = lambda l: reduce(op.and_, filter(lambda s: len(s) == l, p1))
 
-        all_5 = mids = reduce(frozenset.intersection, unknown_digits_by_len[5])
-        all_6 = abfg = reduce(frozenset.intersection, unknown_digits_by_len[6])
+        segs_adg = digits_of_len(5)
+        segs_abfg = digits_of_len(6)
 
-        known_segments = {}
+        seg_d = segs_adg - segs_abfg
 
-        known_segments["a"] = known_digits[7] - known_digits[4]
-        known_segments["d"] = mids - abfg
-        known_segments["g"] = mids - (known_segments["a"] | known_segments["d"])
+        known[0] = known[8] - seg_d
+        known[3] = segs_adg | known[1]
+        known[5] = segs_abfg | seg_d
 
-        known_digits[5] = abfg | known_segments["d"]
-        known_digits[0] = known_digits[8] - known_segments["d"]
-        known_digits[3] = mids | known_digits[1]
+        known[2] = segs_adg | (known[8] - known[5])
+        known[9] = known[5] | known[1]
+        known[6] = known[5] | (known[8] - known[9])
 
-        known_digits[9] = known_digits[5] | known_digits[7]
-        known_segments["e"] = known_digits[8] - known_digits[9]
+        digit_mappings = {v: k for k, v in known.items()}
 
-        known_digits[6] = known_digits[5] | known_segments["e"]
-
-        known_digits[2] = first(set(p1) - set(known_digits.values()))
-
-        digit_mappings = {v: k for k, v in known_digits.items()}
-
-        num = "".join(map(str, (digit_mappings.get(d, 0) for d in p2)))
+        num = "".join(map(str, (digit_mappings[d] for d in p2)))
         total += int(num)
 
     print(total)
