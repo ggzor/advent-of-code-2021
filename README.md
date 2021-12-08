@@ -21,6 +21,7 @@ written in [Scala 3](https://scala-lang.org/),
 
 ## Remarks
 
+- Scala solutions are **short** and **concise**, be sure to check them out.
 - The solutions are self contained, they can easily be executed as shown in the
   next [section](#running-the-solutions). This also makes them just a bit cluttered
   because the parsing and the part selection are inside the same file.
