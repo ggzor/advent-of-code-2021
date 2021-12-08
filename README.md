@@ -20,14 +20,15 @@ written in [Scala 3](https://scala-lang.org/),
 
 ## Remarks
 
-- These are not the shortest or fastest solutions, but they are readable and
-  show the key ideas for solving each problem and how to translate them to each
-  different language.
-- Both parts of each problem are solved in the same file, this requires a bit of
-  generalization to solve both parts with almost the same code.
 - The solutions are self contained, they can easily be executed as shown in the
   next [section](#running-the-solutions). This also makes them just a bit cluttered
   because the parsing and the part selection are inside the same file.
+- Both parts of each problem are solved in the same file, this requires a bit of
+  generalization to solve both parts with almost the same code, and makes the
+  code longer than other solutions.
+- These are not the shortest or fastest solutions, but they are readable and
+  show the key ideas for solving each problem and how to translate them to each
+  different language.
 - The Python solutions are a bit clunky because these are the ones I code first.
 - The solutions in Rust are not so good because this is the first time I use
   Rust for this kind of problems. It gets better day by day, but don't expect amazing
