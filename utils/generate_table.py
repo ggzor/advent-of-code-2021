@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 from itertools import dropwhile, takewhile
+from pathlib import Path
 
 TEMPLATE = "utils/template.md"
 
@@ -12,6 +13,7 @@ PROBLEM_NAMES = [
     "Hydrotermal Venture",
     "Lanternfish",
     "The Treachery of Whales",
+    "Seven Segment Search",
 ]
 
 FILE_EXT_LANG = {
@@ -65,8 +67,16 @@ with open(TEMPLATE, "r", encoding="utf8") as f:
                     end="",
                 )
                 for ext, lang in FILE_EXT_LANG.items():
+                    target_file = Path(f"./day{day:02}/Day{day:02}.{ext}")
+                    if target_file.exists():
+                        link = (
+                            f"[{lang}]({target_file}{compute_line_numbers(day, ext)})"
+                        )
+                    else:
+                        link = ""
+
                     print(
-                        f"[{lang}](./day{day:02}/Day{day:02}.{ext}{compute_line_numbers(day, ext)})|",
+                        f"{link}|",
                         end="",
                     )
                 print()
