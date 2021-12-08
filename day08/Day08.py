@@ -2,85 +2,51 @@ from functools import reduce
 from sys import argv, stdin
 from collections import defaultdict
 
-digs = [
-    *map(set, "abcefg cf acdeg acdfg bcdf abdfg abdefg acf abcdefg abcdfg".split(" "))
-]
+parts = [[[*map(frozenset, p.strip().split(" "))] for p in l.split("|")] for l in stdin]
 
-full = set("abcdefg")
+digit_lens = {2: 1, 3: 7, 4: 4, 7: 8}
 
-total = 0
-for l in stdin.readlines():
-    mapping = {}
+if argv[1] == "1":
+    total = sum(sum(len(s) in digit_lens.keys() for s in p2) for _, p2 in parts)
+    print(total)
+else:
+    total = 0
 
-    p1, p2 = l.split("|")
-    p1 = p1.strip().split(" ")
-    p2 = p2.strip().split(" ")
+    for p1, p2 in parts:
+        known_digits = {}
+        unknown_digits_by_len = defaultdict(list)
 
-    lmap = {2: 1, 4: 4, 3: 7, 7: 8}
+        for s in p1:
+            if len(s) in digit_lens.keys():
+                known_digits[digit_lens[len(s)]] = s
+            else:
+                unknown_digits_by_len[len(s)].append(s)
 
-    if argv[1] == "1":
-        total += sum(len(s) in lmap.keys() for s in p2)
-    else:
-        # 7 - 8
-        # 6 - 0 6 9
-        # 5 - 2 3 5
-        # 4 - 4
-        # 3 - 7
-        # 2 - 1
+        first = lambda s: next(iter(s))
 
-        known = {}
-        unknown = defaultdict(list)
+        all_5 = mids = reduce(frozenset.intersection, unknown_digits_by_len[5])
+        all_6 = abfg = reduce(frozenset.intersection, unknown_digits_by_len[6])
 
-        for s in map(lambda s: "".join(sorted(s)), p1):
-            found = False
-            for k, v in lmap.items():
-                if len(s) == k:
-                    mapping[s] = str(v)
-                    known[v] = set(s)
-                    found = True
-                    break
+        known_segments = {}
 
-            if not found:
-                unknown[len(s)].append(set(s))
+        known_segments["a"] = known_digits[7] - known_digits[4]
+        known_segments["d"] = mids - abfg
+        known_segments["g"] = mids - (known_segments["a"] | known_segments["d"])
 
-        final = {}
+        known_digits[5] = abfg | known_segments["d"]
+        known_digits[0] = known_digits[8] - known_segments["d"]
+        known_digits[3] = mids | known_digits[1]
 
-        ka = list(known[7] - known[1])[0]
-        final[ka] = "a"
+        known_digits[9] = known_digits[5] | known_digits[7]
+        known_segments["e"] = known_digits[8] - known_digits[9]
 
-        all_6 = reduce(set.intersection, unknown[6])
-        mids = all_5 = reduce(set.intersection, unknown[5])
+        known_digits[6] = known_digits[5] | known_segments["e"]
 
-        kg = next(iter(all_6 & all_5 - set([ka])))
-        final[kg] = "g"
+        known_digits[2] = first(set(p1) - set(known_digits.values()))
 
-        kd = next(iter(mids - set([ka, kg])))
-        final[kd] = "d"
+        digit_mappings = {v: k for k, v in known_digits.items()}
 
-        kb = next(iter(all_6 - mids - known[1]))
-        final[kb] = "b"
+        num = "".join(map(str, (digit_mappings.get(d, 0) for d in p2)))
+        total += int(num)
 
-        kf = next(iter(all_6 - mids - set([kb])))
-        final[kf] = "f"
-
-        left = set("abcdefg") - final.keys()
-
-        five_is = frozenset(full - left)
-        two_and_three = frozenset(map(frozenset, unknown[5])).difference([five_is])
-
-        s1, s2 = list(two_and_three)
-        ke_and_kf = s1.symmetric_difference(s2)
-        ke = next(iter(ke_and_kf - set([kf])))
-        final[ke] = "e"
-
-        kc = next(iter(full - final.keys()))
-        final[kc] = "c"
-
-        for s in map(lambda s: "".join(sorted(s)), p1):
-            real = digs.index(set(final[c] for c in s))
-            mapping[s] = str(real)
-
-        s = "".join(mapping.get("".join(sorted(v)), "0") for v in p2)
-        total += int(s)
-
-print(total)
+    print(total)
