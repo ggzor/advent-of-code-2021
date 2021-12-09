@@ -13,12 +13,12 @@ written in [Scala 3](https://scala-lang.org/),
 |[01](https://adventofcode.com/2021/day/1)|Sonar Sweep|[Scala](day01/Day01.scala)|[Haskell](day01/Day01.hs#L5-L9)|[Python](day01/Day01.py)|[Rust](day01/Day01.rs)|
 |[02](https://adventofcode.com/2021/day/2)|Dive!|[Scala](day02/Day02.scala)|[Haskell](day02/Day02.hs#L7-L35)|[Python](day02/Day02.py)|[Rust](day02/Day02.rs)|
 |[03](https://adventofcode.com/2021/day/3)|Binary Diagnostic|[Scala](day03/Day03.scala)|[Haskell](day03/Day03.hs#L9-L41)|[Python](day03/Day03.py)|[Rust](day03/Day03.rs)|
-|[04](https://adventofcode.com/2021/day/4)|Giant Squid|[Scala](day04/Day04.scala)|[Haskell](day04/Day04.hs#L14-L79)|[Python](day04/Day04.py)|[Rust](day04/Day04.rs)|
+|[04](https://adventofcode.com/2021/day/4)|Giant Squid|[Scala](day04/Day04.scala)|[Haskell](day04/Day04.hs)|[Python](day04/Day04.py)|[Rust](day04/Day04.rs)|
 |[05](https://adventofcode.com/2021/day/5)|Hydrotermal Venture|[Scala](day05/Day05.scala)|[Haskell](day05/Day05.hs#L11-L30)|[Python](day05/Day05.py)|[Rust](day05/Day05.rs)|
 |[06](https://adventofcode.com/2021/day/6)|Lanternfish|[Scala](day06/Day06.scala)|[Haskell](day06/Day06.hs#L13-L29)|[Python](day06/Day06.py)|[Rust](day06/Day06.rs)|
 |[07](https://adventofcode.com/2021/day/7)|The Treachery of Whales|[Scala](day07/Day07.scala)|[Haskell](day07/Day07.hs#L10-L17)|[Python](day07/Day07.py)|[Rust](day07/Day07.rs)|
-|[08](https://adventofcode.com/2021/day/8)|Seven Segment Search|[Scala](day08/Day08.scala)|[Haskell](day08/Day08.hs#L14-L73)|[Python](day08/Day08.py)|[Rust](day08/Day08.rs)|
-|[09](https://adventofcode.com/2021/day/9)|Smoke Basin|[Scala](day09/Day09.scala)|[Haskell](day09/Day09.hs#L13-L84)|[Python](day09/Day09.py)|[Rust](day09/Day09.rs)|
+|[08](https://adventofcode.com/2021/day/8)|Seven Segment Search|[Scala](day08/Day08.scala)|[Haskell](day08/Day08.hs)|[Python](day08/Day08.py)|[Rust](day08/Day08.rs)|
+|[09](https://adventofcode.com/2021/day/9)|Smoke Basin|[Scala](day09/Day09.scala)|[Haskell](day09/Day09.hs)|[Python](day09/Day09.py)|[Rust](day09/Day09.rs)|
 
 ## Remarks
 

@@ -4,6 +4,7 @@ from itertools import dropwhile, takewhile
 from pathlib import Path
 
 TEMPLATE = "utils/template.md"
+SHORT_HS_SOLUTION = {1, 2, 3, 5, 6, 7}
 
 PROBLEM_NAMES = [
     "Sonar Sweep",
@@ -47,10 +48,11 @@ def get_haskell_line_ranges(day):
 
 def compute_line_numbers(day, ext):
     if ext == "hs":
-        start, end = get_haskell_line_ranges(day)
-        return f"#L{start}-L{end}"
-    else:
-        return ""
+        if day in SHORT_HS_SOLUTION:
+            start, end = get_haskell_line_ranges(day)
+            return f"#L{start}-L{end}"
+
+    return ""
 
 
 with open(TEMPLATE, "r", encoding="utf8") as f:
