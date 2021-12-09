@@ -18,6 +18,7 @@ written in [Scala 3](https://scala-lang.org/),
 |[06](https://adventofcode.com/2021/day/6)|Lanternfish|[Scala](day06/Day06.scala)|[Haskell](day06/Day06.hs#L13-L29)|[Python](day06/Day06.py)|[Rust](day06/Day06.rs)|
 |[07](https://adventofcode.com/2021/day/7)|The Treachery of Whales|[Scala](day07/Day07.scala)|[Haskell](day07/Day07.hs#L10-L17)|[Python](day07/Day07.py)|[Rust](day07/Day07.rs)|
 |[08](https://adventofcode.com/2021/day/8)|Seven Segment Search|[Scala](day08/Day08.scala)|[Haskell](day08/Day08.hs#L14-L73)|[Python](day08/Day08.py)|[Rust](day08/Day08.rs)|
+|[09](https://adventofcode.com/2021/day/9)|Smoke Basin|||[Python](day09/Day09.py)||
 
 ## Remarks
 

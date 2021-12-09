@@ -14,6 +14,7 @@ PROBLEM_NAMES = [
     "Lanternfish",
     "The Treachery of Whales",
     "Seven Segment Search",
+    "Smoke Basin",
 ]
 
 FILE_EXT_LANG = {
