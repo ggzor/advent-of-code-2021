@@ -16,6 +16,7 @@ PROBLEM_NAMES = [
     "The Treachery of Whales",
     "Seven Segment Search",
     "Smoke Basin",
+    "Syntax Scoring",
 ]
 
 FILE_EXT_LANG = {
