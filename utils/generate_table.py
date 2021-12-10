@@ -4,7 +4,7 @@ from itertools import dropwhile, takewhile
 from pathlib import Path
 
 TEMPLATE = "utils/template.md"
-SHORT_HS_SOLUTION = {1, 2, 3, 5, 6, 7}
+SHORT_HS_SOLUTION = {1, 2, 3, 5, 6, 7, 10}
 
 PROBLEM_NAMES = [
     "Sonar Sweep",
