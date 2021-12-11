@@ -20,7 +20,7 @@ written in [Scala 3](https://scala-lang.org/),
 |[08](https://adventofcode.com/2021/day/8)|Seven Segment Search|[Scala](day08/Day08.scala)|[Haskell](day08/Day08.hs)|[Python](day08/Day08.py)|[Rust](day08/Day08.rs)|
 |[09](https://adventofcode.com/2021/day/9)|Smoke Basin|[Scala](day09/Day09.scala)|[Haskell](day09/Day09.hs)|[Python](day09/Day09.py)|[Rust](day09/Day09.rs)|
 |[10](https://adventofcode.com/2021/day/10)|Syntax Scoring|[Scala](day10/Day10.scala)|[Haskell](day10/Day10.hs#L7-L41)|[Python](day10/Day10.py)|[Rust](day10/Day10.rs)|
-|[11](https://adventofcode.com/2021/day/11)|Dumbo Octopus||[Haskell](day11/Day11.hs)|[Python](day11/Day11.py)||
+|[11](https://adventofcode.com/2021/day/11)|Dumbo Octopus||[Haskell](day11/Day11.hs)|[Python](day11/Day11.py)|[Rust](day11/Day11.rs)|
 
 ## Remarks
 
