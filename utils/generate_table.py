@@ -17,6 +17,7 @@ PROBLEM_NAMES = [
     "Seven Segment Search",
     "Smoke Basin",
     "Syntax Scoring",
+    "Dumbo Octopus",
 ]
 
 FILE_EXT_LANG = {
