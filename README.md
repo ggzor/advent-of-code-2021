@@ -21,7 +21,7 @@ written in [Scala 3](https://scala-lang.org/),
 |[09](https://adventofcode.com/2021/day/9)|Smoke Basin|[Scala](day09/Day09.scala)|[Haskell](day09/Day09.hs)|[Python](day09/Day09.py)|[Rust](day09/Day09.rs)|
 |[10](https://adventofcode.com/2021/day/10)|Syntax Scoring|[Scala](day10/Day10.scala)|[Haskell](day10/Day10.hs#L7-L41)|[Python](day10/Day10.py)|[Rust](day10/Day10.rs)|
 |[11](https://adventofcode.com/2021/day/11)|Dumbo Octopus|[Scala](day11/Day11.scala)|[Haskell](day11/Day11.hs)|[Python](day11/Day11.py)|[Rust](day11/Day11.rs)|
-|[12](https://adventofcode.com/2021/day/12)|Passage Pathing||[Haskell](day12/Day12.hs)|[Python](day12/Day12.py)|[Rust](day12/Day12.rs)|
+|[12](https://adventofcode.com/2021/day/12)|Passage Pathing|[Scala](day12/Day12.scala)|[Haskell](day12/Day12.hs)|[Python](day12/Day12.py)|[Rust](day12/Day12.rs)|
 
 ## Remarks
 
