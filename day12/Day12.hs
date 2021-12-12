@@ -10,18 +10,12 @@ import System.Environment
 
 type Node = String
 type Path = [Node]
-type Graph = M.Map (Node, Node) ()
+type Graph = S.Set (Node, Node)
 
 undirected (x, y) = [(x, y), (y, x)]
-parseGraph =
-  M.fromList
-    . concatMap
-      ( map (,()) . undirected
-          . second tail
-          . span (/= '-')
-      )
+parseGraph = S.fromList . concatMap (undirected . second tail . span (/= '-'))
 
-neighbors n = map snd . filter ((n ==) . fst) . M.keys
+neighbors n = map snd . filter ((n ==) . fst) . S.elems
 
 isStart = (== "start")
 isEnd = (== "end")
