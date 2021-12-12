@@ -18,6 +18,7 @@ PROBLEM_NAMES = [
     "Smoke Basin",
     "Syntax Scoring",
     "Dumbo Octopus",
+    "Passage Pathing",
 ]
 
 FILE_EXT_LANG = {
