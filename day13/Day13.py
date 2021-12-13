@@ -43,7 +43,5 @@ for dir, n in folds[:top]:
 if argv[1] == "1":
     print(len(nums))
 else:
-    h = max(y for _, y in nums) + 1
-    w = max(x for x, _ in nums) + 1
     mat = [["#" if (x, y) in nums else " " for x in range(w)] for y in range(h)]
     print("\n".join("".join(r) for r in mat))
