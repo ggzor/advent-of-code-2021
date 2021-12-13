@@ -19,6 +19,7 @@ PROBLEM_NAMES = [
     "Syntax Scoring",
     "Dumbo Octopus",
     "Passage Pathing",
+    "Transparent Origami",
 ]
 
 FILE_EXT_LANG = {
