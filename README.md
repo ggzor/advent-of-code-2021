@@ -23,7 +23,7 @@ written in [Scala 3](https://scala-lang.org/),
 |[11](https://adventofcode.com/2021/day/11)|Dumbo Octopus|[Scala](day11/Day11.scala)|[Haskell](day11/Day11.hs)|[Python](day11/Day11.py)|[Rust](day11/Day11.rs)|
 |[12](https://adventofcode.com/2021/day/12)|Passage Pathing|[Scala](day12/Day12.scala)|[Haskell](day12/Day12.hs)|[Python](day12/Day12.py)|[Rust](day12/Day12.rs)|
 |[13](https://adventofcode.com/2021/day/13)|Transparent Origami|[Scala](day13/Day13.scala)|[Haskell](day13/Day13.hs)|[Python](day13/Day13.py)|[Rust](day13/Day13.rs)|
-|[14](https://adventofcode.com/2021/day/14)|Extended Polymerization||[Haskell](day14/Day14.hs)|[Python](day14/Day14.py)||
+|[14](https://adventofcode.com/2021/day/14)|Extended Polymerization||[Haskell](day14/Day14.hs)|[Python](day14/Day14.py)|[Rust](day14/Day14.rs)|
 
 ## Remarks
 
