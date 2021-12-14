@@ -20,6 +20,7 @@ PROBLEM_NAMES = [
     "Dumbo Octopus",
     "Passage Pathing",
     "Transparent Origami",
+    "Extended Polymerization",
 ]
 
 FILE_EXT_LANG = {
