@@ -21,6 +21,7 @@ PROBLEM_NAMES = [
     "Passage Pathing",
     "Transparent Origami",
     "Extended Polymerization",
+    "Chiton",
 ]
 
 FILE_EXT_LANG = {
