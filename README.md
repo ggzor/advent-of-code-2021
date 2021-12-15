@@ -24,7 +24,7 @@ written in [Scala 3](https://scala-lang.org/),
 |[12](https://adventofcode.com/2021/day/12)|Passage Pathing|[Scala](day12/Day12.scala)|[Haskell](day12/Day12.hs)|[Python](day12/Day12.py)|[Rust](day12/Day12.rs)|
 |[13](https://adventofcode.com/2021/day/13)|Transparent Origami|[Scala](day13/Day13.scala)|[Haskell](day13/Day13.hs)|[Python](day13/Day13.py)|[Rust](day13/Day13.rs)|
 |[14](https://adventofcode.com/2021/day/14)|Extended Polymerization|[Scala](day14/Day14.scala)|[Haskell](day14/Day14.hs)|[Python](day14/Day14.py)|[Rust](day14/Day14.rs)|
-|[15](https://adventofcode.com/2021/day/15)|Chiton|||[Python](day15/Day15.py)||
+|[15](https://adventofcode.com/2021/day/15)|Chiton||[Haskell](day15/Day15.hs)|[Python](day15/Day15.py)||
 
 ## Remarks
 
