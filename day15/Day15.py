@@ -1,65 +1,43 @@
 from sys import argv, stdin
 from queue import PriorityQueue
 
-old_nums = [[int(x) for x in l.strip()] for l in stdin.readlines()]
+text = stdin.read()
+lines = text.splitlines()
 
-if argv[1] == "1":
-    nums = old_nums
-else:
+xs = {(y, x): int(v) for y, l in enumerate(lines) for x, v in enumerate(l)}
+w = max(y for y, _ in xs.keys()) + 1
+h = max(x for _, x in xs.keys()) + 1
 
-    def f(x):
-        if x <= 9:
-            return x
-        else:
-            return x - 9
+if argv[1] == "2":
+    f = lambda x: x if x <= 9 else x - 9
+    xs = {
+        (y + sy * h, x + sx * w): f(v + sy + sx)
+        for (y, x), v in xs.items()
+        for sy in range(5)
+        for sx in range(5)
+    }
+    h *= 5
+    w *= 5
 
-    nums = []
-    for r in old_nums:
-        l = []
-        l.extend(r)
-        for i in range(1, 5):
-            l.extend(f(v + i) for v in r)
-
-        nums.append(l)
-
-    temp_nums = []
-    temp_nums.extend(nums)
-    for i in range(1, 5):
-        temp_nums.extend([[f(x + i) for x in r] for r in nums])
-
-    nums = temp_nums
-
-# print("\n".join("".join(map(str, r)) for r in nums))
-
-w = len(nums[0])
-h = len(nums)
-
-D = {(y, x): float("inf") for y in range(h) for x in range(w)}
-D[(0, 0)] = 0
-
-
-pq = PriorityQueue()
-pq.put((0, (0, 0)))
-
+D = {}
+q = PriorityQueue()
 seen = set()
 
-while not pq.empty():
-    (dist, p) = pq.get()
-    (y, x) = p
-    seen.add(p)
+D[(0, 0)] = 0
+q.put((0, (0, 0)))
 
+while not q.empty():
+    d, p = q.get()
+    y, x = p
     for dy, dx in [(-1, 0), (0, -1), (0, 1), (1, 0)]:
-        ny = y + dy
-        nx = x + dx
-        neigh = ny, nx
+        np = ny, nx = y + dy, x + dx
 
-        if 0 <= ny < h and 0 <= nx < w:
-            distance = nums[ny][nx]
-            if not neigh in seen:
-                old_cost = D[neigh]
-                new_cost = D[p] + distance
-                if new_cost < old_cost:
-                    pq.put((new_cost, neigh))
-                    D[neigh] = new_cost
+        if not np in seen and 0 <= ny < h and 0 <= nx < w:
+            old = D.get(np, float("infinity"))
+            new = d + xs[np]
+            if new < old:
+                D[np] = new
+                q.put((new, np))
+    seen.add(p)
 
 print(D[(h - 1, w - 1)])
