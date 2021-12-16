@@ -22,6 +22,7 @@ PROBLEM_NAMES = [
     "Transparent Origami",
     "Extended Polymerization",
     "Chiton",
+    "Packet Decoder",
 ]
 
 FILE_EXT_LANG = {
