@@ -32,7 +32,7 @@ def simulate(xv, yv):
         maxx = max(x, maxx)
         maxy = max(y, maxy)
 
-        if y < y1:
+        if y < y1 or x > x2 or (xv == 0 and x < x1):
             break
 
     return (hit, maxy)
@@ -42,8 +42,10 @@ count = 0
 best = -1e9
 
 # Pure guess
-for xv in range(0, 200):
-    for yv in range(-200, 500):
+max_yv = 300
+
+for xv in range(0, x2 + 1):
+    for yv in range(y1 - 1, max_yv):
         hit, maxy = simulate(xv, yv)
         if hit:
             count += 1
