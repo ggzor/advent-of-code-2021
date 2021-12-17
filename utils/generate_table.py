@@ -23,6 +23,7 @@ PROBLEM_NAMES = [
     "Extended Polymerization",
     "Chiton",
     "Packet Decoder",
+    "Trick Shot",
 ]
 
 FILE_EXT_LANG = {
