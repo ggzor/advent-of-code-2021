@@ -24,6 +24,7 @@ PROBLEM_NAMES = [
     "Chiton",
     "Packet Decoder",
     "Trick Shot",
+    "Snailfish",
 ]
 
 FILE_EXT_LANG = {
