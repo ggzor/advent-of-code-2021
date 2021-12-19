@@ -25,6 +25,7 @@ PROBLEM_NAMES = [
     "Packet Decoder",
     "Trick Shot",
     "Snailfish",
+    "Beacon Scanner",
 ]
 
 FILE_EXT_LANG = {
