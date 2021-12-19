@@ -44,12 +44,6 @@ def reduce(t: Tree): Tree =
   Iterator.unfold(t){t => tryExplode(t).orElse(trySplit(t)).map{r => (r, r)}}
           .to(LazyList).lastOption.getOrElse(t)
 
-def pprint(t: Tree): String =
-  val idx = t.map{_.swap}.toMap
-  def go(p: Path): String =
-    idx.get(p).map{_.toString}.getOrElse(s"[${go(p :+ 'L')},${go(p :+ 'R')}]")
-  go(Vector())
-
 def magnitude(t: Tree): Int =
   val idx = t.map{_.swap}.toMap
   def go(p: Path): Int =
