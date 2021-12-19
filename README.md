@@ -27,7 +27,7 @@ written in [Scala 3](https://scala-lang.org/),
 |[15](https://adventofcode.com/2021/day/15)|Chiton|[Scala](day15/Day15.scala)|[Haskell](day15/Day15.hs)|[Python](day15/Day15.py)|[Rust](day15/Day15.rs)|
 |[16](https://adventofcode.com/2021/day/16)|Packet Decoder|[Scala](day16/Day16.scala)|[Haskell](day16/Day16.hs)|[Python](day16/Day16.py)|[Rust](day16/Day16.rs)|
 |[17](https://adventofcode.com/2021/day/17)|Trick Shot|[Scala](day17/Day17.scala)|[Haskell](day17/Day17.hs)|[Python](day17/Day17.py)|[Rust](day17/Day17.rs)|
-|[18](https://adventofcode.com/2021/day/18)|Snailfish||[Haskell](day18/Day18.hs)|[Python](day18/Day18.py)||
+|[18](https://adventofcode.com/2021/day/18)|Snailfish||[Haskell](day18/Day18.hs)|[Python](day18/Day18.py)|[Rust](day18/Day18.rs)|
 
 ## Remarks
 
