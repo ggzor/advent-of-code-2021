@@ -26,6 +26,7 @@ PROBLEM_NAMES = [
     "Trick Shot",
     "Snailfish",
     "Beacon Scanner",
+    "Trench Map",
 ]
 
 FILE_EXT_LANG = {
