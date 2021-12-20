@@ -1,6 +1,10 @@
 import scala.io.Source.stdin
 import scala.annotation.tailrec
 
+// This solution is slow.
+// It takes it about one and a half minutes for
+// the longest input to complete.
+
 val PERMUTATIONS = Array(
     1, 2, 3,
     -3, 2, 1,

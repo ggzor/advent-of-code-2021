@@ -1,6 +1,10 @@
 from sys import argv, stdin
 import numpy as np
 
+# This solution is slow.
+# It takes it about one and a half minutes for
+# the longest input to complete.
+
 text = stdin.read()
 
 scanners = {}
