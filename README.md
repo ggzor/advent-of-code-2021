@@ -29,7 +29,7 @@ written in [Scala 3](https://scala-lang.org/),
 |[17](https://adventofcode.com/2021/day/17)|Trick Shot|[Scala](day17/Day17.scala)|[Haskell](day17/Day17.hs)|[Python](day17/Day17.py)|[Rust](day17/Day17.rs)|
 |[18](https://adventofcode.com/2021/day/18)|Snailfish|[Scala](day18/Day18.scala)|[Haskell](day18/Day18.hs)|[Python](day18/Day18.py)|[Rust](day18/Day18.rs)|
 |[19](https://adventofcode.com/2021/day/19)|Beacon Scanner|[Scala](day19/Day19.scala)|[Haskell](day19/Day19.hs)|[Python](day19/Day19.py)|[Rust](day19/Day19.rs)|
-|[20](https://adventofcode.com/2021/day/20)|Trench Map|||[Python](day20/Day20.py)||
+|[20](https://adventofcode.com/2021/day/20)|Trench Map||[Haskell](day20/Day20.hs)|[Python](day20/Day20.py)||
 
 ## Remarks
 
