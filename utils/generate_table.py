@@ -27,6 +27,7 @@ PROBLEM_NAMES = [
     "Snailfish",
     "Beacon Scanner",
     "Trench Map",
+    "Dirac Dice",
 ]
 
 FILE_EXT_LANG = {
