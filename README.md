@@ -57,7 +57,7 @@ mind:
   - Input is taken from standard input.
   - Either `1` or `2` must be passed as arguments to choose which part to run.
 
-### Scala
+### Scala 3
 
 For example, to run the **Scala** solution for the **second part** of the
 **first day**, you can use the following command:
@@ -68,11 +68,18 @@ cat day01/test01.txt | scala day01/Day01.scala 2
 
 ### Haskell
 
+The solutions were tested with GHC `9.0.1`, but `8.x` should work too. 
+No other libraries apart from `base`, `containers` and `mtl` are used, they
+should be installed by default.
+
 ```shell
 cat day01/test01.txt | runghc day01/Day01.hs 2
 ```
 
 ### Python
+
+The solutions were tested with python `3.9`, but they should work using any version `>=3.8`.
+Only `numpy` is used apart from the standard library.
 
 ```shell
 cat day01/test01.txt | python3 day01/Day01.py 2
