@@ -28,6 +28,7 @@ PROBLEM_NAMES = [
     "Beacon Scanner",
     "Trench Map",
     "Dirac Dice",
+    "Reactor Reboot",
 ]
 
 FILE_EXT_LANG = {
