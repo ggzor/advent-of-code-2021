@@ -31,7 +31,7 @@ written in [Scala 3](https://scala-lang.org/),
 |[19](https://adventofcode.com/2021/day/19)|Beacon Scanner|[Scala](day19/Day19.scala)|[Haskell](day19/Day19.hs)|[Python](day19/Day19.py)|[Rust](day19/Day19.rs)|
 |[20](https://adventofcode.com/2021/day/20)|Trench Map|[Scala](day20/Day20.scala)|[Haskell](day20/Day20.hs)|[Python](day20/Day20.py)|[Rust](day20/Day20.rs)|
 |[21](https://adventofcode.com/2021/day/21)|Dirac Dice|[Scala](day21/Day21.scala)|[Haskell](day21/Day21.hs)|[Python](day21/Day21.py)|[Rust](day21/Day21.rs)|
-|[22](https://adventofcode.com/2021/day/22)|Reactor Reboot|||[Python](day22/Day22.py)||
+|[22](https://adventofcode.com/2021/day/22)|Reactor Reboot||[Haskell](day22/Day22.hs)|[Python](day22/Day22.py)||
 
 ## Remarks
 
