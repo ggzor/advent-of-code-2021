@@ -128,7 +128,7 @@ impl ops::Sub for Cube {
     fn sub(self, rhs: Self) -> Self::Output {
         let intersects = (self & rhs).is_some();
 
-        // Poor's man generator
+        // Poor man's generator
         let mut count = 0;
         from_fn(move || {
             if !intersects {
