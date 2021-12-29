@@ -34,7 +34,7 @@ written in [Scala 3](https://scala-lang.org/),
 |[22](https://adventofcode.com/2021/day/22)|Reactor Reboot|[Scala](day22/Day22.scala)|[Haskell](day22/Day22.hs)|[Python](day22/Day22.py)|[Rust](day22/Day22.rs)|
 |[23](https://adventofcode.com/2021/day/23)|Amphipod|||||
 |[24](https://adventofcode.com/2021/day/24)|Arithmetic Logic Unit|||||
-|[25](https://adventofcode.com/2021/day/25)|Sea Cucumber|||[Python](day25/Day25.py)|[Rust](day25/Day25.rs)|
+|[25](https://adventofcode.com/2021/day/25)|Sea Cucumber|[Scala](day25/Day25.scala)||[Python](day25/Day25.py)|[Rust](day25/Day25.rs)|
 
 ## Remarks
 
