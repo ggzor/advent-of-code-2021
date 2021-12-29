@@ -29,6 +29,9 @@ PROBLEM_NAMES = [
     "Trench Map",
     "Dirac Dice",
     "Reactor Reboot",
+    "Amphipod",
+    "Arithmetic Logic Unit",
+    "Sea Cucumber",
 ]
 
 FILE_EXT_LANG = {
