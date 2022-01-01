@@ -36,8 +36,8 @@ step b = (advance '>' b >>= advance 'v') <|> advance '>' b <|> advance 'v' b
 
 solve b =
   length . takeWhile isJust
-    . L.scanl' (flip (const (>>= step))) (Just b)
-    $ repeat ()
+    . L.scanl' (>>=) (Just b)
+    $ repeat step
 
 main :: IO ()
 main = print . solve . parse . lines =<< getContents
