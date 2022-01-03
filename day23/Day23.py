@@ -54,115 +54,62 @@ def apply_movement(movement, board):
     return new_board
 
 
+def one_side_hallway_and_siderooms(board, init, side_it):
+    y, x = init
+    v = board[y, x]
+
+    for xi in side_it:
+        cur = (1, xi)
+        cur_len = abs(x - xi)
+        if cur not in board:
+            # Hallway
+            if xi not in target_cols:
+                yield cur_len, (init, cur)
+            else:
+                # Side rooms
+                if xi == target[v]:
+                    target_cur = None
+                    target_len = None
+                    for yi in range(2, H - 1):
+                        new_cur = (yi, xi)
+                        new_len = cur_len + yi - 1
+                        if new_cur not in board:
+                            target_cur = new_cur
+                            target_len = new_len
+                        else:
+                            break
+                    if target_cur is not None:
+                        if all(
+                            board.get((yi, xi), v) == v
+                            for yi in range(target_cur[0] + 1, H - 1)
+                        ):
+                            yield target_len, (init, target_cur)
+        else:
+            break
+
+
+def both_sides(board, init):
+    _, x = init
+    yield from one_side_hallway_and_siderooms(board, init, range(x - 1, 0, -1))
+    yield from one_side_hallway_and_siderooms(board, init, range(x + 1, W - 1))
+
+
 def next_movements(board):
     for init, v in board.items():
         y, x = init
         if y >= 2:
-            if target[v] != x or any(board[y2, x] != v for y2 in range(y + 1, H - 1)):
-                if all(board.get((y2, x), ".") == "." for y2 in range(y - 1, 1, -1)):
+            if target[v] != x or any(board[yi, x] != v for yi in range(y + 1, H - 1)):
+                if all(board.get((yi, x), ".") == "." for yi in range(y - 1, 1, -1)):
                     base_len = y - 1
 
-                    for x2 in range(x - 1, 0, -1):
-                        cur = (1, x2)
-                        cur_len = base_len + abs(x - x2)
-                        if cur not in board:
-                            if x2 not in target_cols:
-                                yield cur_len, (init, cur)
-                            else:
-                                if x2 == target[v]:
-                                    target_cur = None
-                                    target_len = None
-                                    for y2 in range(2, H - 1):
-                                        new_cur = (y2, x2)
-                                        new_len = cur_len + y2 - 1
-                                        if new_cur not in board:
-                                            target_cur = new_cur
-                                            target_len = new_len
-                                        else:
-                                            break
-                                    if target_cur is not None:
-                                        if all(
-                                            board.get((y2, x2), v) == v
-                                            for y2 in range(target_cur[0] + 1, H - 1)
-                                        ):
-                                            yield target_len, (init, target_cur)
-                        else:
-                            break
+                    for cur_len, m in both_sides(board, init):
+                        yield base_len + cur_len, m
 
-                    for x2 in range(x + 1, W - 1):
-                        cur = (1, x2)
-                        cur_len = base_len + abs(x - x2)
-                        if cur not in board:
-                            if x2 not in target_cols:
-                                yield cur_len, (init, cur)
-                            else:
-                                if x2 == target[v]:
-                                    target_cur = None
-                                    target_len = None
-                                    for y2 in range(2, H - 1):
-                                        new_cur = (y2, x2)
-                                        new_len = cur_len + y2 - 1
-                                        if new_cur not in board:
-                                            target_cur = new_cur
-                                            target_len = new_len
-                                        else:
-                                            break
-                                    if target_cur is not None:
-                                        if all(
-                                            board.get((y2, x2), v) == v
-                                            for y2 in range(target_cur[0] + 1, H - 1)
-                                        ):
-                                            yield target_len, (init, target_cur)
-                        else:
-                            break
         elif y == 1:
-            for x2 in range(x - 1, 0, -1):
-                cur = (1, x2)
-                cur_len = abs(x - x2)
-                if cur not in board:
-                    if x2 == target[v]:
-                        target_cur = None
-                        target_len = None
-                        for y2 in range(2, H - 1):
-                            new_cur = (y2, x2)
-                            new_len = cur_len + y2 - 1
-                            if new_cur not in board:
-                                target_cur = new_cur
-                                target_len = new_len
-                            else:
-                                break
-                        if target_cur is not None:
-                            if all(
-                                board.get((y2, x2), v) == v
-                                for y2 in range(target_cur[0] + 1, H - 1)
-                            ):
-                                yield target_len, (init, target_cur)
-                else:
-                    break
-
-            for x2 in range(x + 1, W - 1):
-                cur = (1, x2)
-                cur_len = abs(x - x2)
-                if cur not in board:
-                    if x2 == target[v]:
-                        target_cur = None
-                        target_len = None
-                        for y2 in range(2, H - 1):
-                            new_cur = (y2, x2)
-                            new_len = cur_len + y2 - 1
-                            if new_cur not in board:
-                                target_cur = new_cur
-                                target_len = new_len
-                            else:
-                                break
-                        if target_cur is not None:
-                            if all(
-                                board.get((y2, x2), v) == v
-                                for y2 in range(target_cur[0] + 1, H - 1)
-                            ):
-                                yield target_len, (init, target_cur)
-                else:
-                    break
+            for cur_len, m in both_sides(board, init):
+                _, (yi, _) = m
+                if yi != 1:
+                    yield cur_len, m
 
 
 def is_goal(board):
