@@ -32,7 +32,7 @@ written in [Scala 3](https://scala-lang.org/),
 |[20](https://adventofcode.com/2021/day/20)|Trench Map|[Scala](day20/Day20.scala)|[Haskell](day20/Day20.hs)|[Python](day20/Day20.py)|[Rust](day20/Day20.rs)|
 |[21](https://adventofcode.com/2021/day/21)|Dirac Dice|[Scala](day21/Day21.scala)|[Haskell](day21/Day21.hs)|[Python](day21/Day21.py)|[Rust](day21/Day21.rs)|
 |[22](https://adventofcode.com/2021/day/22)|Reactor Reboot|[Scala](day22/Day22.scala)|[Haskell](day22/Day22.hs)|[Python](day22/Day22.py)|[Rust](day22/Day22.rs)|
-|[23](https://adventofcode.com/2021/day/23)|Amphipod|||[Python](day23/Day23.py)||
+|[23](https://adventofcode.com/2021/day/23)|Amphipod||[Haskell](day23/Day23.hs)|[Python](day23/Day23.py)||
 |[24](https://adventofcode.com/2021/day/24)|Arithmetic Logic Unit|||[Python](day24/Day24.py)||
 |[25](https://adventofcode.com/2021/day/25)|Sea Cucumber|[Scala](day25/Day25.scala)|[Haskell](day25/Day25.hs)|[Python](day25/Day25.py)|[Rust](day25/Day25.rs)|
 
