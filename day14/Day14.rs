@@ -1,4 +1,4 @@
-#![feature(stdin_forwarders, array_windows)]
+#![feature(array_windows)]
 use std::collections::HashMap;
 use std::env;
 use std::io;

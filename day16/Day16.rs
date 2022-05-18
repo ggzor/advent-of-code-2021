@@ -1,4 +1,4 @@
-#![feature(stdin_forwarders, array_chunks)]
+#![feature(array_chunks)]
 use std::env;
 use std::io;
 

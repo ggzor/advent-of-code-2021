@@ -1,4 +1,4 @@
-#![feature(stdin_forwarders, type_alias_impl_trait)]
+#![feature(type_alias_impl_trait)]
 use std::collections::HashMap;
 use std::env;
 use std::io;

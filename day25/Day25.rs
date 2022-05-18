@@ -1,4 +1,3 @@
-#![feature(stdin_forwarders)]
 use std::collections::HashMap;
 use std::io;
 

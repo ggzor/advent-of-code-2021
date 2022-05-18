@@ -1,4 +1,4 @@
-#![feature(stdin_forwarders, array_zip)]
+#![feature(array_zip)]
 use std::collections::HashMap;
 use std::collections::HashSet;
 use std::collections::VecDeque;

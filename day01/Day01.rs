@@ -1,4 +1,4 @@
-#![feature(stdin_forwarders, array_windows)]
+#![feature(array_windows)]
 use std::env;
 use std::io;
 

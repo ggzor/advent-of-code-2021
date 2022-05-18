@@ -1,4 +1,3 @@
-#![feature(stdin_forwarders)]
 use std::collections::HashSet;
 use std::collections::VecDeque;
 use std::env;

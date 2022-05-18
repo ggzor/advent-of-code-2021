@@ -1,4 +1,4 @@
-#![feature(stdin_forwarders, if_let_guard, array_windows)]
+#![feature(if_let_guard, array_windows)]
 use std::collections::HashMap;
 use std::collections::VecDeque;
 use std::convert::TryInto;

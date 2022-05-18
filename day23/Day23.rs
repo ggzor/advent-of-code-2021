@@ -1,4 +1,3 @@
-#![feature(stdin_forwarders, int_abs_diff)]
 use std::collections::{hash_map::DefaultHasher, BinaryHeap, HashMap, HashSet};
 use std::env;
 use std::hash::{Hash, Hasher};
