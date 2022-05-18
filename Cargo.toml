@@ -1,0 +1,101 @@
+[package]
+name = "ggzor-aoc2021"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "day01"
+path = "./day01/Day01.rs"
+
+[[bin]]
+name = "day02"
+path = "./day02/Day02.rs"
+
+[[bin]]
+name = "day03"
+path = "./day03/Day03.rs"
+
+[[bin]]
+name = "day04"
+path = "./day04/Day04.rs"
+
+[[bin]]
+name = "day05"
+path = "./day05/Day05.rs"
+
+[[bin]]
+name = "day06"
+path = "./day06/Day06.rs"
+
+[[bin]]
+name = "day07"
+path = "./day07/Day07.rs"
+
+[[bin]]
+name = "day08"
+path = "./day08/Day08.rs"
+
+[[bin]]
+name = "day09"
+path = "./day09/Day09.rs"
+
+[[bin]]
+name = "day10"
+path = "./day10/Day10.rs"
+
+[[bin]]
+name = "day11"
+path = "./day11/Day11.rs"
+
+[[bin]]
+name = "day12"
+path = "./day12/Day12.rs"
+
+[[bin]]
+name = "day13"
+path = "./day13/Day13.rs"
+
+[[bin]]
+name = "day14"
+path = "./day14/Day14.rs"
+
+[[bin]]
+name = "day15"
+path = "./day15/Day15.rs"
+
+[[bin]]
+name = "day16"
+path = "./day16/Day16.rs"
+
+[[bin]]
+name = "day17"
+path = "./day17/Day17.rs"
+
+[[bin]]
+name = "day18"
+path = "./day18/Day18.rs"
+
+[[bin]]
+name = "day19"
+path = "./day19/Day19.rs"
+
+[[bin]]
+name = "day20"
+path = "./day20/Day20.rs"
+
+[[bin]]
+name = "day21"
+path = "./day21/Day21.rs"
+
+[[bin]]
+name = "day22"
+path = "./day22/Day22.rs"
+
+[[bin]]
+name = "day23"
+path = "./day23/Day23.rs"
+
+[[bin]]
+name = "day25"
+path = "./day25/Day25.rs"
+

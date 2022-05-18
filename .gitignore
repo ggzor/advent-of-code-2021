@@ -13,3 +13,5 @@
 .bloop/
 project/metals.sbt
 
+### Rust
+target/
